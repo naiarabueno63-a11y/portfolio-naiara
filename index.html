@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Portfólio - Naiara Bueno</title>
+
+<style>
+/* ESTILO GERAL */
+body {
+    font-family: Arial;
+    margin: 0;
+    background-color: white;
+    color: black;
+}
+
+/* MENU */
+nav {
+    background-color: black;
+    padding: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SEÇÕES */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+/* FORMULÁRIO */
+input, textarea {
+    width: 250px;
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* TEMA ESCURO */
+.dark {
+    background-color: #121212;
+    color: white;
+}
+</style>
+
+</head>
+<body>
+
+<!-- MENU -->
+<nav>
+<ul>
+<li><a href="#sobre">Sobre mim</a></li>
+<li><a href="#formacao">Formação</a></li>
+<li><a href="#portfolio">Portfólio</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+
+<!-- SOBRE -->
+<section id="sobre">
+<h1>Sobre mim</h1>
+<p>Meu nome é Naiara Aparecida Bueno, sou estudante de tecnologia.</p>
+<p>Tenho interesse em programação, desenvolvimento web e aprender novas ferramentas.</p>
+<p>Meus hobbies incluem estudar, ler, ouvir música e explorar novas tecnologias.</p>
+</section>
+
+<!-- FORMAÇÃO -->
+<section id="formacao">
+<h1>Formação</h1>
+<p>Curso: Ciencia da computacao</p>
+<p>Instituição: Uninter</p>
+<p>Idiomas: Português (nativo)</p>
+</section>
+
+<!-- PORTFÓLIO -->
+<section id="portfolio">
+<h1>Portfólio</h1>
+<ul>
+<li><a href="#">Projeto 1 - Site pessoal</a></li>
+<li><a href="#">Projeto 2 - Em desenvolvimento</a></li>
+</ul>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+<h1>Contato</h1>
+
+<form onsubmit="enviar(event)">
+<input type="text" id="nome" placeholder="Naiara Aparecida Bueno"><br>
+<input type="email" id="email" placeholder="naiaraapbueno@gmail.com"><br>
+<textarea id="mensagem" placeholder="ola, pessoal!"></textarea><br>
+<button type="submit">Enviar</button>
+</form>
+
+<br>
+<button onclick="trocarTema()">Alternar Tema</button>
+
+</section>
+
+<script>
+// VALIDAÇÃO DO FORMULÁRIO
+function enviar(event){
+    event.preventDefault();
+
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let mensagem = document.getElementById("mensagem").value;
+
+    if(nome === "" || email === "" || mensagem === ""){
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    if(!email.includes("@") || !email.includes(".")){
+        alert("Email inválido!");
+        return;
+    }
+
+    alert("Mensagem enviada com sucesso!");
+
+    document.querySelector("form").reset();
+}
+
+// TEMA ESCURO
+function trocarTema(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
