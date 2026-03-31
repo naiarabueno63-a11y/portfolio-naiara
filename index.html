@@ -5,7 +5,6 @@
 <title>Portfólio - Naiara Aparecida Bueno</title>
 
 <style>
-/* ESTILO GERAL */
 body {
     font-family: Arial;
     margin: 0;
@@ -13,7 +12,6 @@ body {
     color: black;
 }
 
-/* MENU */
 nav {
     background-color: black;
     padding: 15px;
@@ -37,13 +35,11 @@ nav a {
     font-weight: bold;
 }
 
-/* SEÇÕES */
 section {
     padding: 50px;
     text-align: center;
 }
 
-/* FORMULÁRIO */
 input, textarea {
     width: 250px;
     padding: 10px;
@@ -55,7 +51,6 @@ button {
     cursor: pointer;
 }
 
-/* TEMA ESCURO */
 .dark {
     background-color: #121212;
     color: white;
@@ -65,7 +60,6 @@ button {
 </head>
 <body>
 
-<!-- MENU -->
 <nav>
 <ul>
 <li><a href="#sobre">Sobre mim</a></li>
@@ -75,7 +69,6 @@ button {
 </ul>
 </nav>
 
-<!-- SOBRE -->
 <section id="sobre">
 <h1>Sobre mim</h1>
 <p>Meu nome é Naiara Aparecida Bueno, sou estudante de tecnologia.</p>
@@ -83,7 +76,6 @@ button {
 <p>Meus hobbies incluem estudar, ler, ouvir música e explorar novas tecnologias.</p>
 </section>
 
-<!-- FORMAÇÃO -->
 <section id="formacao">
 <h1>Formação</h1>
 <p>Curso: Ciência da Computação</p>
@@ -91,16 +83,18 @@ button {
 <p>Idiomas: Português (nativo)</p>
 </section>
 
-<!-- PORTFÓLIO -->
 <section id="portfolio">
 <h1>Portfólio</h1>
 <ul>
-<li><a href="#">Projeto 1 - Site pessoal</a></li>
-<li><a href="#">Projeto 2 - Em desenvolvimento</a></li>
+<li>
+<a href="#" onclick="mostrarMensagem()">Projeto 1 - Site pessoal</a>
+</li>
+<li>
+<a href="#" onclick="mostrarMensagem()">Projeto 2 - Em desenvolvimento</a>
+</li>
 </ul>
 </section>
 
-<!-- CONTATO -->
 <section id="contato">
 <h1>Contato</h1>
 
@@ -117,7 +111,6 @@ button {
 </section>
 
 <script>
-// VALIDAÇÃO DO FORMULÁRIO
 function enviar(event){
     event.preventDefault();
 
@@ -136,13 +129,16 @@ function enviar(event){
     }
 
     alert("Mensagem enviada com sucesso!");
-
     document.querySelector("form").reset();
 }
 
-// TEMA ESCURO
 function trocarTema(){
     document.body.classList.toggle("dark");
+}
+
+// NOVO: interação do portfólio
+function mostrarMensagem(){
+    alert("Projeto em desenvolvimento!");
 }
 </script>
 
